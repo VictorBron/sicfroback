@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "BackendOperacionesFroward": {
+      "commandName": "Project",
+      "nativeDebugging": false,
+      "ASPNETCORE_ENVIRONMENT": "Production"
+    }
+  }
+}
