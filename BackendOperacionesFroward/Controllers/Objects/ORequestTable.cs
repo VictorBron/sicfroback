@@ -10,17 +10,8 @@ namespace BackendOperacionesFroward.Controllers.Objects
 {
     public class ORequestTable
     {
+        /* Request*/
         public int IdRequest { get; set; }
-
-        public int NumRequest { get; set; }
-
-        public string ClientName { get; set; }
-
-        public string DriverName { get; set; }
-
-        public string DriverRUT { get; set; }
-
-        public string VehiclePatent { get; set; }
 
         public DateTime ValidityStart { get; set; }
 
@@ -36,6 +27,35 @@ namespace BackendOperacionesFroward.Controllers.Objects
 
         public string ModifiedBy { get; set; }
 
+        public int NumRequest { get; set; }
+
+        public string IndustrialShed { get; set; }
+
+        public string DestinyClient { get; set; }
+
+        public string Product { get; set; }
+
+        public string Format { get; set; }
+
+        public string NumAgreement { get; set; }
+
+        public string NumAgris { get; set; }
+
+        public string DestinyDirection { get; set; }
+
+        /* Client */
+        public string ClientName { get; set; }
+
+        /* Driver */
+        public string DriverName { get; set; }
+
+        public string DriverRUT { get; set; }
+
+        public string DriverTelephone { get; set; }
+
+        /* Vehicle */
+        public string VehiclePatent { get; set; }
+
 
         public static ORequestTable ParseRequest(Request request, User user)
         {
@@ -43,9 +63,17 @@ namespace BackendOperacionesFroward.Controllers.Objects
             {
                 IdRequest = (int)request.IdRequest,
                 NumRequest = request.NumRequest,
+                IndustrialShed = request.IndustrialShed,
+                DestinyClient = request.DestinyClient,
+                Product = request.Product,
+                Format = request.Format,
+                NumAgreement = request.NumAgreement,
+                NumAgris = request.NumAgris,
+                DestinyDirection = request.DestinyDirection,
                 ClientName = request.Client.Name,
                 DriverName = request.Driver.LastName + ", " + request.Driver.Name,
                 DriverRUT = request.Driver.RUT,
+                DriverTelephone = request.Driver.Telephone,
                 VehiclePatent = request.Vehicle.Patent,
                 ValidityStart = request.ValidityStart,
                 ValidityEnd = request.ValidityEnd,
